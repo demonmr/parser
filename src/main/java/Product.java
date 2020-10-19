@@ -56,7 +56,32 @@ public class Product {
     private int itemEvalTotalNum;
     @JsonProperty
     private int gmtCreate;
-
+    public String toCSVWrite(){
+        return  ";" + productId +
+                ";" + sellerId +
+                ";" + oriMinPrice  +
+                ";" + oriMaxPrice  +
+                ";" + promotionId +
+                ";" + startTime +
+                ";" + endTime +
+                ";" + phase +
+                ";" + productTitle +
+                ";" + minPrice +
+                ";" + maxPrice +
+                ";" + discount +
+                ";" + totalStock +
+                ";" + stock +
+                ";" + orders +
+                ";" + soldout +
+                ";" + productImage +
+                ";" + detailUrl  +
+                ";" + trace  +
+                ";" + totalTranpro3 +
+                ";" + productPositiveRate  +
+                ";" + productAverageStar +
+                ";" + itemEvalTotalNum +
+                ";" + gmtCreate ;
+    }
     @Override
     public String toString() {
         return "Product{" +
@@ -85,5 +110,101 @@ public class Product {
                 ", itemEvalTotalNum=" + itemEvalTotalNum +
                 ", gmtCreate=" + gmtCreate +
                 '}';
+    }
+
+    public long getProductId() {
+        return productId;
+    }
+
+    public int getSellerId() {
+        return sellerId;
+    }
+
+    public String getOriMinPrice() {
+        return oriMinPrice;
+    }
+
+    public String getOriMaxPrice() {
+        return oriMaxPrice;
+    }
+
+    public long getPromotionId() {
+        return promotionId;
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public int getPhase() {
+        return phase;
+    }
+
+    public String getProductTitle() {
+        return productTitle;
+    }
+
+    public String getMinPrice() {
+        return minPrice;
+    }
+
+    public String getMaxPrice() {
+        return maxPrice;
+    }
+
+    public int getDiscount() {
+        return discount;
+    }
+
+    public int getTotalStock() {
+        return totalStock;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public int getOrders() {
+        return orders;
+    }
+
+    public boolean isSoldout() {
+        return soldout;
+    }
+
+    public String getProductImage() {
+        return productImage;
+    }
+
+    public String getDetailUrl() {
+        return detailUrl;
+    }
+
+    public String getTrace() {
+        return trace;
+    }
+
+    public int getTotalTranpro3() {
+        return totalTranpro3;
+    }
+
+    public String getProductPositiveRate() {
+        return productPositiveRate;
+    }
+
+    public String getProductAverageStar() {
+        return productAverageStar;
+    }
+
+    public int getItemEvalTotalNum() {
+        return itemEvalTotalNum;
+    }
+
+    public int getGmtCreate() {
+        return gmtCreate;
     }
 }
