@@ -1,9 +1,7 @@
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.Date;
-import java.util.List;
 
 @JsonAutoDetect
 public class Product {

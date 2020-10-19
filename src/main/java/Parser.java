@@ -1,18 +1,14 @@
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gargoylesoftware.htmlunit.*;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import jcifs.smb.NtlmAuthenticator;
 import jcifs.smb.NtlmPasswordAuthentication;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
-
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
@@ -21,15 +17,12 @@ import java.util.List;
 public class Parser {
     private List<Product> listElements;
     private int maxSize = 50;
-
     public Parser() {
         this.listElements = new ArrayList<>();
     }
-
     public List<Product> getItem() throws IOException {
         Results product;
         //Аутентификация на прокси сервере
-        // Create the TelegramBotsApi object to register your bots
         NtlmAuthenticator.setDefault(new NtlmAuthenticator() {
             @Override
             protected NtlmPasswordAuthentication getNtlmPasswordAuthentication() {
