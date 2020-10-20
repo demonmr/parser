@@ -1,10 +1,6 @@
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import detalinfo.ActionModule;
-import detalinfo.ImageModule;
-import detalinfo.PageModule;
-import detalinfo.PriceModule;
+import detalinfo.*;
 
 
 @JsonAutoDetect
@@ -29,19 +25,9 @@ public class DetailProduct {
 	@JsonProperty
 	private PriceModule priceModule;
 
-	@Override
-	public String toString() {
-		return "DetailProduct{" +
-				"name='" + name + '\'' +
-				", minPrice='" + minPrice + '\'' +
-				", maxPrice='" + maxPrice + '\'' +
-				", description='" + description + '\'' +
-				", specifications=" + specifications +
-				", pageModule=" + pageModule +
-				", imageModule=" + imageModule +
-				", priceModule=" + priceModule +
-				'}';
-	}
+	@JsonProperty
+	private SpecsModule specsModule;
+
 
 	public String getName() {
 		return name;
