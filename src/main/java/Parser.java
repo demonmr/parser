@@ -75,6 +75,7 @@ public class Parser {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
+            System.out.println("no ");
             return false;
         }
     }
