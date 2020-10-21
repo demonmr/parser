@@ -1,16 +1,24 @@
 
 
+
+
 import java.io.IOException;
-import java.util.Date;
+
 import java.util.List;
 
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
+
+
+
+
+
+
     Parser parser = new Parser();
     CSVCreate csv;
         try {
             List<Product> list = parser.getItem();
-            parser.getproduct(list);
             csv = new CSVCreate(list);
             csv.setHeaders();
             csv.createCSV();

@@ -1,18 +1,14 @@
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gargoylesoftware.htmlunit.BrowserVersion;
-import com.gargoylesoftware.htmlunit.DefaultCredentialsProvider;
-import com.gargoylesoftware.htmlunit.NicelyResynchronizingAjaxController;
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
+
 import jcifs.smb.NtlmAuthenticator;
 import jcifs.smb.NtlmPasswordAuthentication;
-import org.jsoup.Connection;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-import javax.swing.text.html.HTMLDocument;
+
 import java.io.*;
 import java.net.*;
 import java.net.Proxy.Type;
@@ -88,47 +84,7 @@ public class Parser {
         return null;
     }
 
-    public List<DetailProduct> getproduct( List<Product> listElements){
-  /*  listElements.stream().forEach(e->{
-        WebClient webClient = new WebClient(BrowserVersion.CHROME);
-        webClient.getOptions().setCssEnabled(false);
-        webClient.getOptions().setJavaScriptEnabled(true);
-        webClient.getCookieManager().setCookiesEnabled(true);
-        webClient.waitForBackgroundJavaScript(100);
-        webClient.setAjaxController(new NicelyResynchronizingAjaxController());
-        try {
-            HtmlPage page = webClient.getPage("https:"+e.getDetailUrl());
-            System.out.println(page.asXml());
 
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        }
-
-
-    });*/
-
-
-
-        WebClient webClient = new WebClient(BrowserVersion.CHROME);
-        DefaultCredentialsProvider credentialsProvider = (DefaultCredentialsProvider) webClient.getCredentialsProvider();
-        credentialsProvider.addNTLMCredentials("miroshnitchenko", "titaniuM-1996", "10.1.6.16", 8080, "szr234m.corp.local", "corp.local");
-        webClient.getOptions().setCssEnabled(false);
-        webClient.getOptions().setJavaScriptEnabled(true);
-        webClient.getCookieManager().setCookiesEnabled(true);
-        webClient.waitForBackgroundJavaScript(100);
-        webClient.setAjaxController(new NicelyResynchronizingAjaxController());
-        try {
-            System.out.println("https:"+listElements.get(0).getDetailUrl());
-            HtmlPage page = webClient.getPage("https:"+listElements.get(0).getDetailUrl());
-            System.out.println(page.asXml());
-            System.out.println();
-return null;
-        } catch (Exception ioException) {
-            ioException.printStackTrace();
-        }
-
-    return null;
-    }
 
     private static boolean netIsAvailable() {
         try {
