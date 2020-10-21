@@ -10,6 +10,7 @@ public class Main {
     CSVCreate csv;
         try {
             List<Product> list = parser.getItem();
+            parser.getproduct(list);
             csv = new CSVCreate(list);
             csv.setHeaders();
             csv.createCSV();
