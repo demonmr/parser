@@ -1,7 +1,3 @@
-import org.supercsv.cellprocessor.Optional;
-import org.supercsv.cellprocessor.constraint.NotNull;
-import org.supercsv.cellprocessor.constraint.UniqueHashCode;
-import org.supercsv.cellprocessor.ift.CellProcessor;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -53,34 +49,8 @@ public class CSVCreate {
        fileWriter.close();
     }
 
-    private static CellProcessor[] getProcessors() {
-        return new CellProcessor[]{
-                new UniqueHashCode(),
-                new NotNull(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional(),
-                new Optional()
-        };
-    }
+
+
 
 
 }

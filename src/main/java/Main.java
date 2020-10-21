@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -12,7 +13,6 @@ public class Main {
             csv = new CSVCreate(list);
             csv.setHeaders();
             csv.createCSV();
-            list.stream().forEach(System.out::println);
             System.exit(1);
         } catch (IOException e) {
             e.printStackTrace();

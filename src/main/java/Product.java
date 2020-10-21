@@ -55,13 +55,17 @@ public class Product {
     @JsonProperty
     private int gmtCreate;
     public String toCSVWrite(){
+        Date date = new Date();
         return  ";" + productId +
                 ";" + sellerId +
                 ";" + oriMinPrice  +
                 ";" + oriMaxPrice  +
                 ";" + promotionId +
-                ";" + startTime +
-                ";" + endTime +
+                //";" + startTime +
+                ";" + new Date((startTime!=null)?(new Date().getTime()-startTime.getTime()):date.getTime()) +
+                ";" + new Date((endTime!=null)?(endTime.getTime()+new Date().getTime()):date.getTime()) +
+
+               // ";" + endTime +
                 ";" + phase +
                 ";" + productTitle +
                 ";" + minPrice +
