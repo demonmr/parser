@@ -12,6 +12,7 @@ import java.net.*;
 import java.net.Proxy.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Parser {
     private List<Product> listElements;
@@ -47,14 +48,21 @@ public class Parser {
                 }
                 urlConnection.connect();
 
-                BufferedInputStream io = new BufferedInputStream(urlConnection.getInputStream());
+                //Reader io = urlConnection.getInputStream();
 
-                String text = new String(io.readAllBytes());
+                Scanner scanner = new Scanner(urlConnection.getInputStream());
+                StringBuilder text = new StringBuilder();
+                while (scanner.hasNext())
+                {
+                    text.append(scanner.next());
+                }
 
-                Document doc = Jsoup.parse(text);
+
+
+                Document doc = Jsoup.parse(text.toString());
                 Elements elements = doc.select("body");
                 ObjectMapper mapper = new ObjectMapper();
-                mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+              //  mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
                 String jsonString = elements.get(0).text();
                 StringReader reader = new StringReader(jsonString.substring(jsonString.indexOf("(") + 1));
                 product = mapper.readValue(reader, Results.class);
@@ -67,7 +75,6 @@ public class Parser {
 
 
             return listElements;
-            //   a.stream().forEach(System.out::println);
 
         } catch (IOException e) {
             e.printStackTrace();

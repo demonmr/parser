@@ -56,7 +56,7 @@ public class Product {
     private int gmtCreate;
     public String toCSVWrite(){
         Date date = new Date();
-        return  ";" + productId +
+        return  productId +
                 ";" + sellerId +
                 ";" + oriMinPrice  +
                 ";" + oriMaxPrice  +
