@@ -12,4 +12,18 @@ public class ImageModule {
 
 	@JsonProperty
 	private List<String> summImagePathList;
+
+	@Override
+	public String toString() {
+		StringBuilder imagePath = new StringBuilder();
+		StringBuilder summImagePath = new StringBuilder();
+		imagePathList.stream().forEach(e->{
+			imagePath.append(e+",");
+		});
+		summImagePathList.stream().forEach(e->{
+			summImagePath.append(e+",");
+		});
+
+		return imagePath+";"+summImagePath;
+	}
 }

@@ -1,3 +1,5 @@
+package detalinfo;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import detalinfo.*;
@@ -6,7 +8,8 @@ import detalinfo.*;
 @JsonAutoDetect
 public class DetailProduct {
 
-	private String name;
+
+/*	private String name;
 
 	private String minPrice;
 
@@ -14,7 +17,10 @@ public class DetailProduct {
 
 	private String description;
 
-	private Specifications specifications;
+	private Specifications specifications;*/
+
+	@JsonProperty
+	private CommonModule commonModule;
 
 	@JsonProperty
 	private PageModule pageModule;
@@ -29,25 +35,7 @@ public class DetailProduct {
 	private SpecsModule specsModule;
 
 
-	public String getName() {
-		return name;
-	}
 
-	public String getMinPrice() {
-		return minPrice;
-	}
-
-	public String getMaxPrice() {
-		return maxPrice;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public Specifications getSpecifications() {
-		return specifications;
-	}
 
 	public PageModule getPageModule() {
 		return pageModule;
@@ -59,5 +47,15 @@ public class DetailProduct {
 
 	public PriceModule getPriceModule() {
 		return priceModule;
+	}
+
+	public String toCSVWrite() {
+
+		return commonModule.toString()+";"+
+
+				pageModule.toString()+";"+
+				imageModule.toString()+";"+
+				priceModule.toString()+";"+
+				specsModule.toString()+";";
 	}
 }

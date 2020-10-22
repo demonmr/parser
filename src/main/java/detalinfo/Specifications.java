@@ -13,4 +13,10 @@ public class Specifications {
 	@JsonProperty
 	private String attrValue;
 
+
+	@Override
+	public String toString() {
+		return  attrName + "," +
+				 attrValue;
+	}
 }

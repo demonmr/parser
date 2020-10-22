@@ -1,3 +1,5 @@
+package detalinfo;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -65,7 +67,7 @@ public class Product {
                 ";" + new Date((startTime!=null)?(new Date().getTime()-startTime.getTime()):date.getTime()) +
                 ";" + new Date((endTime!=null)?(endTime.getTime()+new Date().getTime()):date.getTime()) +
 
-               // ";" + endTime +
+                // ";" + endTime +
                 ";" + phase +
                 ";" + productTitle +
                 ";" + minPrice +

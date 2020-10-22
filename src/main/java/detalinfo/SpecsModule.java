@@ -10,4 +10,14 @@ import java.util.TreeMap;
 public class SpecsModule {
 	@JsonProperty
 	private List<Specifications> props;
+
+	@Override
+	public String toString() {
+		StringBuilder res = new StringBuilder();
+		props.stream().forEach(e->{
+			res.append(e+";");
+
+		});
+		return res.toString();
+	}
 }

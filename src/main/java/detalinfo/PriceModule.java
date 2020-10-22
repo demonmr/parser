@@ -9,4 +9,10 @@ public class PriceModule {
 	private String formatedActivityPrice;
 	@JsonProperty
 	private String formatedPrice;
+
+	@Override
+	public String toString() {
+		return  formatedActivityPrice + ";" +
+				formatedPrice;
+	}
 }

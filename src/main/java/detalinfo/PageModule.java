@@ -10,4 +10,11 @@ public class PageModule {
 	@JsonProperty
 	private String imagePath;
 
+	@Override
+	public String toString() {
+		return
+				 title + ";" +
+				imagePath;
+
+	}
 }

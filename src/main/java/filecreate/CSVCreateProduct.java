@@ -1,20 +1,24 @@
+package filecreate;
+
+import detalinfo.Product;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.List;
 
 
-public class CSVCreate {
+public class CSVCreateProduct  implements CSVCreate{
     String[] headers;
     List<Product> lsitems;
 
-    public CSVCreate(List<Product> lsitems) {
+    public CSVCreateProduct(List<Product> lsitems) {
         this.lsitems = lsitems;
 
     }
 
 
-    public void setHeaders(){
+    public void createHeaders(){
         Field[] fields = Product.class.getDeclaredFields();
         headers = new String[fields.length];
         int i=0;
@@ -36,7 +40,7 @@ public class CSVCreate {
 
     public void createCSV() throws IOException {
 
-       FileWriter fileWriter = new FileWriter("src/main/resources/text.csv");
+       FileWriter fileWriter = new FileWriter("src/main/resources/textProduct.csv");
        fileWriter.write(getHeaders());
        fileWriter.append("\n");
        lsitems.stream().forEach(e->{
