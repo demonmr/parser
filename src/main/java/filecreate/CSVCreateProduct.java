@@ -40,7 +40,7 @@ public class CSVCreateProduct  implements CSVCreate{
 
     public void createCSV() throws IOException {
 
-       FileWriter fileWriter = new FileWriter("src/main/resources/textProduct.csv");
+       FileWriter fileWriter = new FileWriter("textProduct.csv");
        fileWriter.write(getHeaders());
        fileWriter.append("\n");
        lsitems.stream().forEach(e->{

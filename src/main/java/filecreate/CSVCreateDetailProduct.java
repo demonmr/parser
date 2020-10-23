@@ -59,7 +59,7 @@ public class CSVCreateDetailProduct implements CSVCreate {
 
     public void createCSV() throws IOException {
 
-        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get("src/main/resources/textDetailProduct.csv"), StandardCharsets.UTF_8);) {
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get("textDetailProduct.csv"), StandardCharsets.UTF_8);) {
 
 
             writer.write(getHeaders());
